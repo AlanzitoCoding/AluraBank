@@ -1,6 +1,7 @@
 // Louvado seja o Senhor 
 
 import {Cliente} from "./Cliente.js"
+import { Conta } from "./Conta.js";
 import {ContaCorrente} from "./ContaCorrente.js"
 import {ContaPoupanca} from "./ContaPoupanca.js"
 
@@ -17,7 +18,8 @@ contaCorrentePedro.sacar(250);
 
 const contaPoupanca = new ContaPoupanca(50, cliente1, 1001);
 
-console.log(contaPoupanca);
-console.log(contaCorrenteRicardo);
-console.log(contaCorrentePedro);
-console.log(ContaCorrente.numeroDeContas);
+const conta = new Conta(900, cliente1, 1001);
+
+// console.log(conta);
+// console.log(contaPoupanca);
+// console.log(contaCorrentePedro);
