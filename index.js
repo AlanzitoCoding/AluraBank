@@ -1,23 +1,20 @@
 // Louvado seja o Senhor 
 
-import {Cliente} from "./Cliente.js"
-import {ContaCorrente} from "./Contas/ContaCorrente.js"
-import {ContaPoupanca} from "./Contas/ContaPoupanca.js"
+import {Cliente} from "./Cliente.js";
+import {Gerente} from "./Funcionarios/Gerente.js";
+import {Diretor} from "./Funcionarios/Diretor.js";
+import { SistemaAuth } from "./SistemaAuth.js";
 
-const cliente1 = new Cliente("Ricardo", 11122233309);
-const cliente2 = new Cliente("Pedro", 12345678900);
+const diretor = new Diretor("Pedro", 12345678900, 10000);
+diretor.cadastrarSenha("123456");
 
-const contaCorrenteRicardo = new ContaCorrente(cliente1, 1001);
-contaCorrenteRicardo.depositar(500);
-contaCorrenteRicardo.sacar(100);
+const gerente = new Gerente("Adam", 11122233300, 4000);
+gerente.cadastrarSenha("32145");
 
-const contaCorrentePedro = new ContaCorrente(cliente2, 1002);
-contaCorrentePedro.depositar(1000);
-contaCorrentePedro.sacar(250);
+const cliente = new Cliente("Wyna", 12343245312, "231");
 
-const contaPoupanca = new ContaPoupanca(0, cliente1, 1001);
-contaPoupanca.depositar(1000);
-contaPoupanca.sacar(200);
+const isDiretorLogged = SistemaAuth.login(diretor, "123456");
+const isGerenteLogged = SistemaAuth.login(gerente, "32145");
+const isClienteLogged = SistemaAuth.login(cliente, "231");
 
-console.log(contaPoupanca);
-console.log(contaCorrentePedro);
+console.log(isDiretorLogged, isGerenteLogged, isClienteLogged);
