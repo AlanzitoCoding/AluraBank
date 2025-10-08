@@ -1,6 +1,6 @@
 // Louvado seja o Senhor 
 
-import { Cliente } from "./Cliente.js";
+import { Cliente } from "../Cliente.js";
 
 export class Conta{
     constructor(saldoInicial, cliente, agencia){
